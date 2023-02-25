@@ -1,3 +1,0 @@
-cmake --build . --target all
-[100%] Built target HelloWorld
-Build complete (0 errors, 0 warnings): /home/plunne/eclipse-workspace/HelloWorld/build/cmake.debug.linux.x86_64
