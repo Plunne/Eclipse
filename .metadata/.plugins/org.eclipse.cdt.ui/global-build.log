@@ -1,0 +1,12 @@
+14:50:37 **** Incremental Build of configuration Debug for project Test ****
+make all 
+Building file: ../src/Test.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Test.d" -MT"src/Test.o" -o "src/Test.o" "../src/Test.c"
+Finished building: ../src/Test.c
+ 
+Building target: Test
+Invoking: Cross GCC Linker
+gcc  -o "Test" ./src/Test.o   
+Finished building target: Test
+ 
