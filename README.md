@@ -43,3 +43,38 @@ Import my settings.
 Then load my settings file `plunne.epf` .
 
 Enjoy!
+
+
+
+
+
+**Assembleur :**
+
+```asm
+            ldi r20, 0x79   ; init r20 = 0x79
+            ldi r21, 0x00   ; init r21 = 0
+
+            ldi r22, 0xF5   ; init r22 = 0xF5
+            ldi r23, 0xE2   ; init r23 = 0xE2
+
+            add r20, r22    ; 0x79 + 0xF5 = 0x16E
+            BRSH nocarry    ; if no carry go to nocarry
+            inc r21         ; if carry, increment r21 (+256)
+
+nocarry:
+            add r20, r23    ; 0x16E + 0xE2
+            BRSH nocarry2   ; if no carry go to nocarry2
+            inc, r21        ; if carry, increment r21 (+512)
+
+nocarry2:
+            ; end of program
+```
+
+**Equivalence en C :**
+
+```c
+char valeurA  = 0x79; // Valeur 1 sur 8bits
+char valeurB  = 0x79; // Valeur 2 sur 8bits
+
+int valeurC = valeurA + valeurB; // Valeur 3 sur 16bits = valeur 1 + valeur 2
+```
