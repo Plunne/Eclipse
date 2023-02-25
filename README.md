@@ -73,8 +73,9 @@ nocarry2:
 **Equivalence en C :**
 
 ```c
-char valeurA  = 0x79; // Valeur 1 sur 8bits
-char valeurB  = 0x79; // Valeur 2 sur 8bits
+long valeurA  = 0x79; // Valeur A sur 32bits (long car doit contenir le resultat qui peut depasser 8bits)
+char valeurB  = 0xF5; // Valeur B sur 8bits
+char valeurC  = 0xE2; // Valeur C sur 8bits
 
-int valeurC = valeurA + valeurB; // Valeur 3 sur 16bits = valeur 1 + valeur 2
+valeurA += valeurB + valeurC; // Valeur A = valeur A + valeur B + valeur C
 ```
